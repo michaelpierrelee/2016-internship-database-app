@@ -1,0 +1,1 @@
+In this folder are saved the sql commands to recreate the tables at their initial state, in the case where they are totally lost.

@@ -1,0 +1,14 @@
+in utf8_bin
+column "names":
+    - contain the names of fields for an internship
+    - the names must have the save name as in the table "interns_internships"
+    - ex: "Last Name"
+column "step":
+    - contain the name of the step
+    - the steps are used in the form to add a new internship in order to separate the fields
+    - ex: "Step 1: Personnal Data"
+column "details":
+    - contain properties and attributes of the field
+    - ex: "element=select;choices=from database
+column "position":
+    - order of fields in the step

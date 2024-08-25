@@ -1,0 +1,295 @@
+@font-face{
+    font-family : "fontawesome";
+    src : url('fonts/fontawesome-webfont.eot');
+    src : url('fonts/fontawesome-webfont.eot?') format('eot'),
+          url('fonts/fontawesome-webfont.woff') format('woff'),
+          url('fonts/fontawesome-webfont.svg') format('svg'),
+          url('fonts/fontawesome-webfont.ttf') format('truetype');
+}
+
+#tips {
+    display: block;
+    padding-left: 8px;
+}
+
+.ui-button .ui-button-text
+{
+    /*to have a compatibility with iOS*/
+    line-height: normal;
+    display: inline;
+}
+
+p {
+    font-size: 1em;
+}
+
+textarea {
+    max-width: 100%;
+}
+
+.fontawe {
+	font-family: "fontawesome";
+}
+
+#form_filters {
+    white-space:nowrap;
+    display:inline-block;
+    max-width: 100vw;
+}
+
+#select_neg_filters, #select_sel_filters {
+    white-space: pre-wrap;
+}
+
+#head_table{
+    white-space:nowrap;
+}
+#body_table td{
+    padding: 5px;
+    max-width: none;
+    overflow-wrap: normal;
+}
+
+.group_filters {
+    display:inline-block;
+    margin: 5px;
+    text-align: center;
+}
+
+.label_filters {
+/*    font-weight: bold;*/
+    font-style: italic;
+}
+
+#access_table {
+    text-align: center;
+}
+
+.field_detail {
+    font-weight: bold;
+    /*margin-right: 20px;*/
+}
+
+.neg_filter, .sel_filter {
+    display:inline-block;
+    border: 1px solid #95a5a6;
+    border-radius: 5px;
+    margin: 3px;
+    padding: 1px 7px 1px 7px;
+    
+}
+
+.neg_filter {
+    background-color: rgba(155,89,182 ,0.5);
+}
+
+.sel_filter {
+    background-color: rgba(241,196,15 ,0.5);
+}
+
+#form_mbs_table {
+    text-align: center;
+}
+#form_mbs_table td {
+    padding: 5px;
+    max-width: none;
+    overflow-wrap: normal;
+}
+form {
+    overflow: hidden;
+}
+
+table {
+    text-align: center;
+}
+
+#table_form_exist {
+    width: 100%;
+}
+
+h1, h2, h3, legend {
+    font-variant: small-caps;
+}
+
+td {
+    padding: 5px;
+    max-width: 0;
+    overflow-wrap: break-word;
+    /*white-space: nowrap;*/
+}
+
+th {
+    /*white-space:nowrap;*/
+    text-align: center;
+}
+
+.f, .s {
+    width: 13%
+}
+.d {
+    width: 50%;
+}
+.p, .r, .m {
+    width: 8%;
+}
+
+
+.remove_internship, .valid_internship {
+    margin: 5px;
+}
+
+#remove_internship, #send_validation {
+    margin: 5px;
+}
+
+.isa_info, .isa_success, .isa_warning, .isa_error {
+    margin: 10px 0px;
+    padding:12px;
+}
+
+.isa_info {
+    color: #00529B;
+    background-color: #BDE5F8;
+}
+.isa_success {
+    color: #4F8A10;
+    background-color: #DFF2BF;
+}
+.isa_warning {
+    color: #9F6000;
+    background-color: #FEEFB3;
+}
+.isa_error {
+    color: #D8000C;
+    background-color: #FFBABA;
+}
+.isa_info i, .isa_success i, .isa_warning i, .isa_error i {
+    margin:10px 22px;
+    font-size:2em;
+    vertical-align:middle;
+}
+
+.examples {
+    font-size:0.8em;
+    font-style:italic;
+}
+
+.test_td {
+    background-color: red;
+}
+
+body {
+    margin: 2%;
+}
+
+header, footer{
+
+
+  text-align: center;
+}
+
+footer {
+    font-size: 0.8em;
+    opacity: 0.5;
+    margin-top: 10px;
+}
+
+#to_center {
+  display: inline-block;
+}
+
+.main_title {
+    line-height: 0%;
+}
+
+#menu_choices {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.a_menu {
+    text-align: center;
+
+    display: flex;
+    justify-content:center;
+    align-content:center;
+    flex-direction:column; 
+
+    font-size: 0.8em;
+    font-weight: bold;
+
+    border: 1px solid #95a5a6;
+    margin: 3px; 
+    padding: 3px;
+    width: 80px;
+    height: 80px;
+}
+
+#form {
+    background-color: rgba(26,188,156 ,1);
+}#form:hover {
+    cursor: pointer; 
+    background-color: rgba(231,76,60 ,1);
+}
+
+#access {
+    background-color: rgba(52,152,219 ,1);
+}#access:hover {
+    cursor: pointer; 
+    background-color: rgba(231,76,60 ,1);
+}
+
+#validation {
+    background-color: rgba(230,126,34 ,1);
+}#validation:hover {
+    cursor: pointer; 
+    background-color: rgba(231,76,60 ,1);
+}
+
+#fields {
+    background-color: rgba(155,89,182 ,1);
+}#fields:hover {
+    cursor: pointer; 
+    background-color: rgba(231,76,60 ,1);
+}
+
+#save {
+    background-color: rgba(241,196,15 ,1);
+}#save:hover {
+    cursor: pointer; 
+    background-color: rgba(231,76,60 ,1);
+}
+
+#remove {
+    background-color: rgba(189,195,199 ,1);
+}#remove:hover {
+    cursor: pointer; 
+    background-color: rgba(231,76,60 ,1);
+}
+
+#members {
+    background-color: rgba(236,240,241 ,1);
+}#members:hover {
+    cursor: pointer; 
+    background-color: rgba(231,76,60 ,1);
+}
+
+#ask_deconnect {
+    font-size: 70%;
+}
+
+#connection {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+.added_field {
+    margin-left: 4px;
+}
+
+.lab_form {
+    font-weight: bold;
+}

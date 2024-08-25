@@ -1,0 +1,11 @@
+utf8_bin
+column "id"
+    - primary index
+column "submit date"
+    - date of the add of the new internship
+    - ex: "13-01-2015" (September 1st 2015)
+column "validated"
+    - 1 if the entry was validated by an admin, 0 if not (by default)
+other columns
+    - their name must follow the entries in interns_fields
+    - their content must be encoded in json
