@@ -15,8 +15,14 @@ if( isset($_POST["data"]) && !empty($_POST["data"]) && is_string($_POST["data"])
 		$exp = explode("&", $raw);
 		foreach ($exp as $r) {
 			$r = explode("=", $r);
+
 			$key = parse_data($r[0]);
-			$value = parse_data($r[1]);
+
+			if (!empty($r[1]))
+				$value = parse_data($r[1]);
+			else
+				$value = "";
+
 			if ($value != "")
 				$data[$key][] = $value;
 		}
@@ -35,26 +41,31 @@ if( isset($_POST["data"]) && !empty($_POST["data"]) && is_string($_POST["data"])
 	//prepare the query and the array for the query
 	$date = date('Y-m-d', time());
 	$db = connect();
-	$query = "INSERT INTO interns_internships VALUES(0, '$date', '',";
+	$query = "INSERT INTO interns_internships VALUES(0, '$date', 0,";
 	$query_arr = array();
 	for($i = 0; $i < count($fields); $i++) {
 		$c = str_replace(' ', '_', $fields[$i]);
 		$query .= " :$c";
 		if ($i < count($fields) - 1)
 			$query .= ", ";
-		$query_arr[$c] = $data[$fields[$i]];
+		
+		if (array_key_exists($fields[$i], $data))
+			$query_arr[$c] = $data[$fields[$i]];
+		else
+			$query_arr[$c] = NULL;
 	}
 	$query .= ")";
 
 	/*echo "<br>" . $query . "<br>";
-	var_dump($query_arr);*/
+	var_dump($query_arr);
+	echo '<br><br>';*/
 
 	//send data into the database
 	try {
 		$req = $db -> prepare($query);
 		$req -> execute($query_arr);
 	} catch (PDOException $e) {
-		echo "Fail in the save of data into the database: $e <br />";
+		echo "Fail in the save of data into the database: <br><br> $e <br /><br>";
 		var_dump($_POST["data"]);
 	}
 	$req -> closeCursor();

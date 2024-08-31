@@ -2,7 +2,10 @@
 
 function connect() {
 	try {
-		return new PDO('mysql:host=localhost;dbname=testDB;charset=utf8', 'testUser', '1234');
+		$db = new PDO('mysql:host=localhost;dbname=testDB;charset=utf8', 'testUser', '1234');
+        // activate debugging
+        $db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        return $db;
 	} catch (Exception $e) {
         die('Erreur : ' . $e->getMessage());
 	}

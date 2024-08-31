@@ -8,7 +8,6 @@ if( isset($_POST["data"]) && !empty($_POST["data"]) && is_string($_POST["data"])
 	$raw_data = $_POST["data"];
 	$id_db = hsc($_POST["id_db"]);
 	$date = hsc($_POST["date"]);
-
 	//convert data into an array
 	$raw_data = explode(";", $raw_data);
 	$data = array();
@@ -16,10 +15,18 @@ if( isset($_POST["data"]) && !empty($_POST["data"]) && is_string($_POST["data"])
 		$exp = explode("&", $raw);
 		foreach ($exp as $r) {
 			$r = explode("=", $r);
-			$key = parse_data($r[0]);
-			$value = parse_data($r[1]);
-			if ($value != "")
-				$data[$key][] = $value;
+
+			if (!empty($r[0])) {
+				$key = parse_data($r[0]);
+				
+				if (!empty($r[1]))
+					$value = parse_data($r[1]);
+				else
+					$value = "";
+
+				if ($value != "")
+					$data[$key][] = $value;
+			}
 		}
 	}
 
@@ -43,14 +50,18 @@ if( isset($_POST["data"]) && !empty($_POST["data"]) && is_string($_POST["data"])
 	}
 
 	//prepare the query and the array for the query
-	$query = "INSERT INTO interns_internships VALUES(0, '$date', 1,";
+	$query = "INSERT INTO interns_internships VALUES($id_db, '$date', 1,";
 	$query_arr = array();
 	for($i = 0; $i < count($fields); $i++) {
 		$c = str_replace(' ', '_', $fields[$i]);
 		$query .= " :$c";
 		if ($i < count($fields) - 1)
 			$query .= ", ";
-		$query_arr[$c] = $data[$fields[$i]];
+
+		if (array_key_exists($fields[$i], $data))
+			$query_arr[$c] = $data[$fields[$i]];
+		else
+			$query_arr[$c] = NULL;
 	}
 	$query .= ")";
 
